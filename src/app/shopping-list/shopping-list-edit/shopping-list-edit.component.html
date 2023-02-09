@@ -1,0 +1,40 @@
+
+<!-- <h5>Start Creating  your list here</h5> -->
+<form (ngSubmit)="addIngredient(form)" #form="ngForm">
+    <div class="row">
+        <div class="form-group col-sm-5">
+            <label>Name:</label>
+            <input type="text" 
+            name="name" 
+            id="name" 
+            class="form-control"
+            ngModel
+            required>
+        </div>
+        <div class="form-group col-sm-2">
+            <label>Amount:</label>
+            <input type="number" 
+            name="amt"
+             id="amt"
+              class="form-control"
+              ngModel
+              required
+              pattern="^[0-9]*[1-9][0-9]*$">
+        </div>
+    </div>
+    
+    <div class="row">
+        <button type="submit" class="btn btn-success" [disabled]="form.status=='INVALID'"  >{{editItem ?'Update':'Add'}}</button>
+        <button type="button" class="btn btn-danger"(click)="deleteText()" *ngIf="editItem">Delete</button>
+        <button type="button" class="btn btn-primary" (click)="onclear()">Clear</button>
+    
+    
+    </div>
+</form>
+<!-- 1) Add template driven form approach in the shopping list edit component
+2) add properties for td driven forms 
+3) Add validations for required 
+4) Add pattern for input type number for positive numbers only 
+5) disable the add button if the form is invalid 
+6) on click of any of the ingredient in the list populate in the input boxes 
+7) after adding any element reset the form. -->

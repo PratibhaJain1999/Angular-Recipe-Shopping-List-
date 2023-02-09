@@ -1,0 +1,12 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-5">
+        <app-recipe-list (recipeSelection)="recipeEvent($event)" (newRecipeBtn) = "newRecipeBtFn($event)" [recipeAdded]="recipeAdded" [recipeDelete]="recipeDelete"></app-recipe-list>
+    </div>
+    <div class="col-md-7">
+        <app-recipe-detail *ngIf="recipeDetail" [recipeDet]="recipeDetail" (recipeDelete)="recipeToBeDeleted($event)"></app-recipe-detail>
+        <h2 *ngIf="!recipeDetail && !newRecipe">Please select recipe </h2>
+        <app-new-recipe *ngIf = "newRecipe" (newRecipeAdded)="newRecipeAdded($event)" ></app-new-recipe>
+    </div>
+</div>
+</div>

@@ -1,0 +1,8 @@
+<app-header (tabComponent)="navigateTab($event)"></app-header>
+<app-recipes *ngIf="tabSelected=='recipe'"></app-recipes>
+<app-shopping-list *ngIf="tabSelected=='shopping-list'"></app-shopping-list>
+<app-authenticate *ngIf="tabSelected=='register'"></app-authenticate>
+
+<h1 *ngIf="tabSelected==''">Welcome to Recipe Book</h1>
+
+

@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand" (click)="showTab('')">Recipe Book</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar navbar-nav">
+                <li><a href="#" class="nav-link" (click)="showTab('recipe')">Recipe</a></li>
+                <li><a href="#" class="nav-link" (click)="showTab('shopping-list')">Shopping List</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav ml-auto">
+                <li>
+                    <a class="nav-link" href="#" (click)="showTab('register')">Register/Login</a>
+                </li>
+                
+                <li>
+                    <a class="nav-link" href="#">Logout</a>
+                </li>
+
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown">Manage</button>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" (click)="saveData()">Save Data</a>
+                        <a class="dropdown-item" href="#" (click)="fetchData()">Fetch Data</a>
+                    </div>
+                </div>
+
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- 1) New recipe component add a placeholder and have empty initial value 
+2) Change the name of the save button to add button
+3) remove the "Please select the product" when we click on new product button
+4) get back to default state when a product is added into the list -->
